@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/juicecube/Yuumi/compare/v1.1.3...v1.1.4) (2019-11-14)
+
+
+### Bug Fixes
+
+* jest.config.js preset name ([537bb2f](https://github.com/juicecube/Yuumi/commit/537bb2fb6f8484377091582a082bfb3337269674))
+
+
+
+
+
 ## [1.1.3](https://github.com/juicecube/Yuumi/compare/v1.1.2...v1.1.3) (2019-11-14)
 
 
