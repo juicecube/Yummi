@@ -1,6 +1,6 @@
 module.exports = (program) => {
   program.command('test:unit')
-  .description('hhh')
+  .description('run unit tests with jest')
   .action((name, cmd) => {
     require('jest').run();
   })

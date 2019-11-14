@@ -3,7 +3,7 @@ module.exports = (generatorApi) => {
 
   generatorApi.extendPackage({
     scripts: {
-      "test:unit": "yummi test:unit"
+      "test:unit": "yuumi test:unit"
     }
   })
 
