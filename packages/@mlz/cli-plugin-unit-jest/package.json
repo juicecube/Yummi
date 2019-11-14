@@ -14,5 +14,8 @@
     "redux-saga-test-plan": "^4.0.0-rc.3",
     "ts-jest": "^24.1.0"
   },
-  "gitHead": "74568f05f7a062af16ed87e02cb8ce3bc52aa0b4"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "fde05dbd37d7e0054edfbb9378422b3ee5a09dab"
 }
