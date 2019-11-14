@@ -1,3 +1,3 @@
 module.exports = {
-  preset: 'plugin-unit-jest'
+  preset: '@mlz/cli-plugin-unit-jest'
 }
