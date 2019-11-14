@@ -9,7 +9,6 @@ yuumi add [pluginName]
 
 
 # 如何开发插件
-```
 在package/@mlz文件夹下添加插件包，注意需要在包的`package.json`中配置
 ```js
   "publishConfig": {
