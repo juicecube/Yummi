@@ -1,7 +1,7 @@
 {
-  "name": "@yuumi/cli-plugin-unit-jest",
+  "name": "@mlz/cli-plugin-unit-jest",
   "version": "1.1.1",
-  "description": "@yummi/unit-jest",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +13,6 @@
     "jest": "^24.9.0",
     "redux-saga-test-plan": "^4.0.0-rc.3",
     "ts-jest": "^24.1.0"
-  }
+  },
+  "gitHead": "74568f05f7a062af16ed87e02cb8ce3bc52aa0b4"
 }
