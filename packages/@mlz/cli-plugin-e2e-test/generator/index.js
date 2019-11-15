@@ -3,7 +3,8 @@ module.exports = (generatorApi) => {
 
   generatorApi.extendPackage({
     scripts: {
-      "test:e2e": "yuumi test:e2e"
+      "test:e2e-open": "yuumi test:e2e-open",
+      "test:e2e-run": "yuumi test:e2e-run"
     }
   })
 }
