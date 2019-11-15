@@ -36,7 +36,7 @@ module.exports = (program) => {
     // 测试配置
     console.log('=== test config ===');
     const openScreenShot = cmdObj.screenShot;
-    const openVide = cmdObj.video;
+    const openVide = cmdObj.record;
     const testConfigCommand = getCypressInlineCommand(openScreenShot, openVide);
     console.log('openScreenShot：'.green, openScreenShot || false);
     console.log('openVide：'.green, openVide || false);
