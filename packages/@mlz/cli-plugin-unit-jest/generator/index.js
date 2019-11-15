@@ -6,5 +6,4 @@ module.exports = (generatorApi) => {
       "test:unit": "yuumi test:unit"
     }
   })
-
 }
