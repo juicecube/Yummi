@@ -1,0 +1,17 @@
+{
+  "name": "@mlz/cli-plugin-e2e-jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "cypress": "^3.6.1"
+  }
+}

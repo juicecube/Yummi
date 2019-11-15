@@ -1,0 +1,11 @@
+#cypress
+cypress/screenshots
+cypress/videos
+
+#vscode
+.vscode
+
+#mac
+*.DS_Store
+.AppleDouble
+.LSOverride
