@@ -1,4 +1,4 @@
-const path = require(path);
+const path = require('path');
 const fs = require('fs');
 const childProcess = require('child_process');
 const colors = require('colors');
