@@ -1,26 +1,22 @@
-#!/usr/bin/env node
-const program = require('commander');
-const childProcess = require('child_process');
+const path = require(path);
 const fs = require('fs');
+const childProcess = require('child_process');
 const colors = require('colors');
 
-const CYPRESS_BASE_TEST_PATH = 'cypress/integration/';
-let noCommand = true;
+module.exports = (program) => {
+  program.command('test:e2e')
+  .description('run e2e tests with cypress')
+  .action((name, cmd) => {
+    console.log(`
+      Usage: script <commad> [option]
 
-const getCypressInlineCommand = (openScreenShot, openVideo) => {
-  if (!openScreenShot && !openVideo) { return '' }
-  let inlineCommand = '--config ';
-  if (openScreenShot) { inlineCommand = inlineCommand + 'screenshotsFolder="cypress/screenshots",' }
-  if (openVideo) { inlineCommand = inlineCommand + 'video=true,' }
-  return inlineCommand.slice(0, -1);
-}
-
-program
-  .version('0.0.1')
-  .usage('<commad> [option]');
-
-program
-  .command('open')
+      Commands:
+        open                            open cypress test runner
+        run [options] [moduleNames...]  run test files
+    `);
+  })
+  program
+  .command('test:e2e open')
   .description('open cypress test runner')
   .action(() => {
     noCommand = false;
@@ -31,18 +27,16 @@ program
       }
     })
   });
-program
-  .command('run [moduleNames...]')
+  program
+  .command('test:e2e run [moduleNames...]')
   .description('run test files')
   .option('-s, --screenShot', 'automatically takes a screenshot when there is a failure in Run mode')
-  .option('-v --video', 'automatically record a video when there is a failure in Run mode')
-  .action((moduleNames, options) => {
-    noCommand = false;
-    console.log('moduleNames', moduleNames);
+  .option('-r, --record', 'automatically record a video when there is a failure in Run mode')
+  .action((moduleNames, cmdObj) => {
     // 测试配置
     console.log('=== test config ===');
-    const openScreenShot = options.screenShot;
-    const openVide = options.video;
+    const openScreenShot = cmdObj.screenShot;
+    const openVide = cmdObj.video;
     const testConfigCommand = getCypressInlineCommand(openScreenShot, openVide);
     console.log('openScreenShot：'.green, openScreenShot || false);
     console.log('openVide：'.green, openVide || false);
@@ -93,14 +87,4 @@ program
     }
   })
 
-program
-  .arguments('<command>')
-  .action((cmd) => {
-    console.log(`Unknown command ${cmd}`.red);
-    program.help();
-  });
-  
-program.parse(process.argv);
-!program.args[0] && noCommand && program.help();
-
-
+}
