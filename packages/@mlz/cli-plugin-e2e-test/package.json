@@ -1,6 +1,6 @@
 {
   "name": "@mlz/cli-plugin-e2e-test",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "access": "public"
   },
   "dependencies": {
+    "colors": "^1.4.0",
     "cypress": "^3.6.1"
   }
 }
