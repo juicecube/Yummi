@@ -1,5 +1,5 @@
 module.exports = (generatorApi) => {
-  generatorApi.addFolderOrFile('./cypress') 
+  generatorApi.addFolderOrFile('./template') 
 
   generatorApi.extendPackage({
     scripts: {
