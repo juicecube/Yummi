@@ -18,3 +18,8 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// 默认关掉屏幕快照功能
+Cypress.Screenshot.defaults({
+  screenshotOnRunFailure: false
+})

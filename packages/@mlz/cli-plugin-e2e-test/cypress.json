@@ -23,7 +23,7 @@
   "requestTimeout": 5000,
   "responseTimeout": 30000,
   "screenshotsFolder": "cypress/screenshots",
-  "supportFile": "cypress/support",
+  "supportFile": "cypress/support/index.js",
   "taskTimeout": 60000,
   "testFiles": "**/*.*",
   "trashAssetsBeforeRuns": true,

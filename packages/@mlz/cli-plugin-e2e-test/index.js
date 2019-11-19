@@ -8,7 +8,7 @@ const CYPRESS_BASE_TEST_PATH = 'cypress/integration/';
 const getCypressInlineCommand = (openScreenShot, openVideo) => {
   if (!openScreenShot && !openVideo) { return '' }
   let inlineCommand = '--config ';
-  if (openScreenShot) { inlineCommand = inlineCommand + 'screenshotsFolder="cypress/screenshots",' }
+  if (openScreenShot) { inlineCommand = inlineCommand + 'supportFile="cypress/support/index-with-sn.js",' }
   if (openVideo) { inlineCommand = inlineCommand + 'video=true,' }
   return inlineCommand.slice(0, -1);
 }
@@ -30,15 +30,15 @@ module.exports = (program) => {
     .command('test:e2e-run [moduleNames...]')
     .description('run test files, [moduleName...]')
     .option('-s, --screenShot', 'automatically takes a screenshot when there is a failure in Run mode')
-    .option('-r, --record', 'automatically record a video when there is a failure in Run mode')
+    .option('-r, --record', 'automatically record a video')
     .action((moduleNames, cmdObj) => {
       // 测试配置
       console.log('=== test config ===');
-      const openScreenShot = cmdObj.screenShot;
-      const openVide = cmdObj.record;
-      const testConfigCommand = getCypressInlineCommand(openScreenShot, openVide);
-      console.log('openScreenShot：'.green, openScreenShot || false);
-      console.log('openVide：'.green, openVide || false);
+      const withScreenShot = cmdObj.screenShot;
+      const withVideo = cmdObj.record;
+      const testConfigCommand = getCypressInlineCommand(withScreenShot, withVideo);
+      console.log('withScreenShot：'.green, withScreenShot || false);
+      console.log('withVideo：'.green, withVideo || false);
       console.log('====================================================================================================');
       if (moduleNames.length > 0) {
         console.log('it will check if the module exists');
