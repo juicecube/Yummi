@@ -3,6 +3,7 @@ yuumi(内部项目)的cli工具扩展
 
 # yuumi插件列表
 - @mlz/cli-plugin-unit-jest
+- @mlz/cli-plugin-e2e-test
 
 # 使用插件
 yuumi add [pluginName]
@@ -19,10 +20,10 @@ yuumi add [pluginName]
 
 #### 插件文件结构
 ```js
-├── generator //该插件需要插入到项目中的文件或者文件夹
-│   ├── index.js 
+├── generator // 该插件需要插入到项目中的文件或者文件夹
+│   ├── index.js // 要注入到项目中的npm命令
 │   └── template
-├── index.js
+├── index.js  // 要插入yuumi命令集中的command命令
 ├── package-lock.json
 ├── package.json
 └── readme.md
