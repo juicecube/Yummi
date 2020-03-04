@@ -91,7 +91,7 @@ module.exports = async(generatorApi) => {
   // 安装依赖包
   const spinner = ora('正在安装依赖包');
   try {
-    await execa('npm', ['install', installArray.join(' '), '-D']);
+    await execa('npm', ['install', ...installArray, '-D']);
     spinner.succeed();
   } catch(e) {
     spinner.fail();
