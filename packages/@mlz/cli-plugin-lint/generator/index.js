@@ -89,8 +89,8 @@ module.exports = async(generatorApi) => {
   installArray.push('@mlz/lint');
 
   // 安装依赖包
+  const spinner = ora('正在安装依赖包');
   try {
-    const spinner = ora('正在安装依赖包');
     await execa('npm', ['install', installArray, '-D']);
     spinner.succeed();
   } catch(e) {
