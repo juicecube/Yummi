@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const ora = require('ora');
 const execa = require('execa');
 
-module.exports = (generatorApi) => {
+module.exports = async(generatorApi) => {
   const lintChoices = [
     {
       name: 'eslint',
