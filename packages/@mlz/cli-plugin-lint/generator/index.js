@@ -3,6 +3,7 @@ const ora = require('ora');
 const execa = require('execa');
 
 module.exports = async(generatorApi) => {
+  console.log('=== @mlz/cli-plugin-lint ===');
   const lintChoices = [
     {
       name: 'eslint',
