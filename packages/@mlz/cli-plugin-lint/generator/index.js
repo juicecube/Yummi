@@ -23,8 +23,11 @@ module.exports = async(generatorApi) => {
       value: 4
     },
   ];
-  const createFile = (file, message) => {
-    const spinner = ora(message);
+  const createFile = (file, message, prefixMessage) => {
+    const spinner = ora({
+      text: message,
+      prefixText: prefixMessage,
+    }).start();
     try {
       generatorApi.addFolderOrFile(file);
       spinner.succeed();
@@ -53,7 +56,8 @@ module.exports = async(generatorApi) => {
     installArray.push('eslint');
     createArray.push({
       file: './template/eslint/.eslintrc.js',
-      message: '正在创建.eslintrc.js',
+      message: '创建.eslintrc.js成功',
+      prefixMessage: '正在创建.eslintrc.js',
     });
   }
   // 配置eslint with react
@@ -61,7 +65,8 @@ module.exports = async(generatorApi) => {
     installArray.indexOf('eslint') === -1 && installArray.push('eslint');
     createArray.push({
       file: './template/eslint-react/.eslintrc.js',
-      message: '正在创建.eslintrc.js',
+      message: '创建.eslintrc.js成功',
+      prefixMessage: '正在创建.eslintrc.js',
     });
   }
   // 配置stylelint
@@ -89,7 +94,10 @@ module.exports = async(generatorApi) => {
   installArray.push('@mlz/lint');
 
   // 安装依赖包
-  const spinner = ora('正在安装依赖包');
+  const spinner = ora({
+    prefixText: '正在安装依赖包',
+    text: '依赖包安装成功'
+  }).start();
   try {
     await execa('npm', ['install', ...installArray, '-D']);
     spinner.succeed();
